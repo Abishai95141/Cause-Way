@@ -1,0 +1,175 @@
+{
+    "metrics": {
+        "conversion_rate": {
+            "name": "Conversion Rate",
+            "description": "Percentage of visitors who become paying customers",
+            "formula": "paying_customers / total_visitors * 100",
+            "unit": "percentage",
+            "direction": "higher_is_better",
+            "owner_team": "growth",
+            "related_metrics": [
+                "activation_rate",
+                "trial_to_paid"
+            ],
+            "criticality": "high"
+        },
+        "activation_rate": {
+            "name": "Activation Rate",
+            "description": "Percentage of new users who complete key onboarding actions",
+            "formula": "activated_users / new_signups * 100",
+            "unit": "percentage",
+            "direction": "higher_is_better",
+            "owner_team": "product",
+            "related_metrics": [
+                "conversion_rate",
+                "time_to_value"
+            ],
+            "criticality": "high"
+        },
+        "churn_rate": {
+            "name": "Churn Rate",
+            "description": "Percentage of customers who cancel subscription per month",
+            "formula": "churned_customers / total_customers * 100",
+            "unit": "percentage",
+            "direction": "lower_is_better",
+            "owner_team": "product",
+            "related_metrics": [
+                "nps",
+                "support_satisfaction"
+            ],
+            "criticality": "critical"
+        },
+        "trial_to_paid": {
+            "name": "Trial to Paid Conversion",
+            "description": "Percentage of trial users who convert to paid",
+            "formula": "converted_trials / total_trials * 100",
+            "unit": "percentage",
+            "direction": "higher_is_better",
+            "owner_team": "growth",
+            "related_metrics": [
+                "activation_rate",
+                "conversion_rate"
+            ],
+            "criticality": "high"
+        },
+        "revenue": {
+            "name": "Monthly Recurring Revenue",
+            "description": "Total monthly subscription revenue",
+            "formula": "sum(active_subscriptions.price)",
+            "unit": "currency",
+            "direction": "higher_is_better",
+            "owner_team": "finance",
+            "related_metrics": [
+                "conversion_rate",
+                "churn_rate"
+            ],
+            "criticality": "critical"
+        },
+        "nps": {
+            "name": "Net Promoter Score",
+            "description": "Customer satisfaction and loyalty metric",
+            "formula": "promoters - detractors",
+            "unit": "score",
+            "direction": "higher_is_better",
+            "owner_team": "support",
+            "related_metrics": [
+                "churn_rate",
+                "support_satisfaction"
+            ],
+            "criticality": "medium"
+        },
+        "cac": {
+            "name": "Customer Acquisition Cost",
+            "description": "Cost to acquire a new paying customer",
+            "formula": "marketing_spend / new_customers",
+            "unit": "currency",
+            "direction": "lower_is_better",
+            "owner_team": "growth",
+            "related_metrics": [
+                "conversion_rate",
+                "revenue"
+            ],
+            "criticality": "high"
+        },
+        "time_to_value": {
+            "name": "Time to Value",
+            "description": "Days until new user experiences core value proposition",
+            "formula": "mean(days_to_first_success)",
+            "unit": "days",
+            "direction": "lower_is_better",
+            "owner_team": "product",
+            "related_metrics": [
+                "activation_rate",
+                "trial_to_paid"
+            ],
+            "criticality": "medium"
+        },
+        "support_satisfaction": {
+            "name": "Support Satisfaction Score",
+            "description": "Customer satisfaction with support interactions",
+            "formula": "positive_ratings / total_ratings * 100",
+            "unit": "percentage",
+            "direction": "higher_is_better",
+            "owner_team": "support",
+            "related_metrics": [
+                "nps",
+                "churn_rate"
+            ],
+            "criticality": "medium"
+        }
+    },
+    "teams": {
+        "growth": {
+            "name": "Growth Team",
+            "owned_metrics": [
+                "conversion_rate",
+                "trial_to_paid",
+                "cac"
+            ],
+            "stakeholder_metrics": [
+                "revenue",
+                "activation_rate"
+            ]
+        },
+        "product": {
+            "name": "Product Team",
+            "owned_metrics": [
+                "activation_rate",
+                "churn_rate",
+                "time_to_value"
+            ],
+            "stakeholder_metrics": [
+                "nps",
+                "trial_to_paid"
+            ]
+        },
+        "finance": {
+            "name": "Finance Team",
+            "owned_metrics": [
+                "revenue"
+            ],
+            "stakeholder_metrics": [
+                "cac",
+                "churn_rate"
+            ]
+        },
+        "support": {
+            "name": "Support Team",
+            "owned_metrics": [
+                "nps",
+                "support_satisfaction"
+            ],
+            "stakeholder_metrics": [
+                "churn_rate"
+            ]
+        },
+        "operations": {
+            "name": "Operations Team",
+            "owned_metrics": [],
+            "stakeholder_metrics": [
+                "support_satisfaction",
+                "time_to_value"
+            ]
+        }
+    }
+}

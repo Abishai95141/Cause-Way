@@ -1,0 +1,50 @@
+[
+    {
+        "id": "CHG-2026-001",
+        "date": "2026-01-15",
+        "type": "pricing",
+        "description": "Increased enterprise tier pricing by 15%",
+        "affected_metrics": [
+            "conversion_rate",
+            "revenue",
+            "churn_rate"
+        ],
+        "team": "growth"
+    },
+    {
+        "id": "CHG-2026-002",
+        "date": "2026-01-10",
+        "type": "product",
+        "description": "Launched new onboarding flow for trial users",
+        "affected_metrics": [
+            "activation_rate",
+            "trial_to_paid",
+            "time_to_value"
+        ],
+        "team": "product"
+    },
+    {
+        "id": "CHG-2025-048",
+        "date": "2025-12-20",
+        "type": "marketing",
+        "description": "Started holiday marketing campaign with 30% discount",
+        "affected_metrics": [
+            "conversion_rate",
+            "cac",
+            "revenue"
+        ],
+        "team": "growth"
+    },
+    {
+        "id": "CHG-2025-047",
+        "date": "2025-12-01",
+        "type": "support",
+        "description": "Reduced support response SLA from 24h to 4h",
+        "affected_metrics": [
+            "nps",
+            "churn_rate",
+            "support_satisfaction"
+        ],
+        "team": "support"
+    }
+]
